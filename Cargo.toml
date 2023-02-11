@@ -3,6 +3,11 @@ name = "rgb2hex"
 version = "0.1.0"
 edition = "2021"
 
+<<<<<<< HEAD
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+=======
+[dependencies]
+hex = "0.4.3"
+>>>>>>> db02ca0 (Finished code for RGB to Hexadecimal)
