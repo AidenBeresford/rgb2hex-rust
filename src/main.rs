@@ -1,9 +1,8 @@
 use std::io;
 
-struct Color(u8, u8, u8);
+struct Color8(u8, u8, u8);
 
 fn main() {
-    
     let mut red_str = String::new();
     let mut blu_str = String::new();
     let mut grn_str = String::new();
@@ -27,11 +26,21 @@ fn main() {
     println!("GREEN-8: ");
 
     io::stdin()
-        .read_line(&mut gre_str)
+        .read_line(&mut grn_str)
         .expect("Failed to read stdin");
 
-    let gre = &gre_str.trim().parse::<u8>().unwrap();
+    let grn = &grn_str.trim().parse::<u8>().unwrap();
 
-    user_color = Color(red, blu, gre);
 
+
+    println!("Hexadecimal Color Code: {}", rgb_2_hex(*red, *grn, *blu));
+
+}
+
+fn rgb_2_hex(r: u8, g: u8, b: u8) -> String  {
+    let mut hex_str = String::from("");
+
+    hex_str.push_str(&hex::encode(vec![r, g, b]));
+
+    return hex_str;
 }
