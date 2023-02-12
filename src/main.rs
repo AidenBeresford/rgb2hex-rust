@@ -1,4 +1,5 @@
 use std::io;
+use colored::Colorize;
 
 struct Color8(u8, u8, u8);
 
@@ -30,7 +31,10 @@ fn main() {
         .expect("Failed to read stdin");
     let blu = &blu_str.trim().parse::<u8>().unwrap();
 
-    println!("Hexadecimal Color Code: {}", rgb_2_hex(*red, *grn, *blu));
+    let text_color = Color8(*red, *grn, *blu);
+
+    println!("Hexadecimal Color Code: {}", rgb_2_hex(text_color.0, text_color.1, text_color.2)
+             .truecolor(text_color.0, text_color.1, text_color.2));
 
 }
 
