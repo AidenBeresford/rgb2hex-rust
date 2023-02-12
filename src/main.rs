@@ -15,23 +15,20 @@ fn main() {
 
     let red = &red_str.trim().parse::<u8>().unwrap();
 
+    println!("GREEN-8: ");     
+     
+    io::stdin()
+        .read_line(&mut grn_str)
+        .expect("Failed to read stdin");
+ 
+    let grn = &grn_str.trim().parse::<u8>().unwrap();
+
     println!("BLUE-8: ");
 
     io::stdin()
         .read_line(&mut blu_str)
         .expect("Failed to read stdin");
-
     let blu = &blu_str.trim().parse::<u8>().unwrap();
-
-    println!("GREEN-8: ");
-
-    io::stdin()
-        .read_line(&mut grn_str)
-        .expect("Failed to read stdin");
-
-    let grn = &grn_str.trim().parse::<u8>().unwrap();
-
-
 
     println!("Hexadecimal Color Code: {}", rgb_2_hex(*red, *grn, *blu));
 
